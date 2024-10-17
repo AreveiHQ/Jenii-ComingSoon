@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Link from "next/link";
+import 'swiper/css';
 const Info = () => {
   return <>
     <div className="">
@@ -29,11 +31,12 @@ const Info = () => {
 
 // MidText Component
 function MidText() {
+  
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mx-6 text-center">
       {/* Coming Soon Main Text */}
-      <h1 className="text-6xl text-[#C41E56] font-semibold">Coming Soon</h1>
-      <p className="text-[#C41E56] text-lg mt-2">
+      <h1 className=" text-5xl sm:text-6xl md:text-7xl text-[#C41E56] font-semibold ">Coming Soon</h1>
+      <p className="text-[#C41E56] text-lg  mt-2">
         Discover the beauty of timeless craftsmanship with Jenii
       </p>
     </div>
@@ -42,17 +45,18 @@ function MidText() {
 
 
 function Slideshow() {
+  const Message = encodeURIComponent("Hello! Jenii I'm interested in exploring more jewelry. Could you show me options like rings, bracelets, or other pieces?");
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex flex-col md:flex-row  items-center justify-center">
       {/* Social Media Icons */}
-      <div className="absolute left-6 top-1/2 transform -translate-y-1/2 hidden md:flex flex-col gap-4">
-        <SocialIcon href="#" Icon={FaFacebook} />
-        <SocialIcon href="#" Icon={FaWhatsapp} />
-        <SocialIcon href="#" Icon={FaInstagram} />
+      <div className="  static md:absolute left-1/3 md:left-6 top-0  md:top-1/2 transform -translate-y-1/2 flex flex-row md:flex-col gap-4">
+        <SocialIcon href="https://m.facebook.com/jenii.jp.jewellery/" Icon={FaFacebook} />
+        <SocialIcon href={`https://wa.me/919824825564?text=${Message}`}Icon={FaWhatsapp} />
+        <SocialIcon href="https://www.instagram.com/jenii.jp.jewellery?igsh=eXZ1ajkwMTZyeDlt" Icon={FaInstagram} />
       </div>
 
       {/* Ring Image */}
-      <div className="flex flex-col w-[70vw]  ">
+      <div className="flex flex-col w-[90vw] md:w-[70vw]  ">
       <Image
       width={300}
       height={300}
@@ -60,9 +64,9 @@ function Slideshow() {
         alt="Diamond Ring"
         className="w-30 h-30 mx-auto "
       />
-      <div className="h-10 w-[50%] mx-auto bg-[radial-gradient(49.69%_46.99%_at_49.42%_42.82%,#AAAAAA_0%,#B6B6B6_8%,#D5D5D5_33%,#e6d7d7_57%,#edd9cd_80%,transparent_100%)]"></div>
+      <div className="h-10 w-[80%] md:w-[60%] lg:w-[50%] mx-auto bg-[radial-gradient(49.69%_46.99%_at_49.42%_42.82%,#AAAAAA_0%,#B6B6B6_8%,#D5D5D5_33%,#ECECEC_57%,#FAFAFA_80%,transparent_100%)]"></div>
+     
       </div>
-
       {/* Right Arrow Button */}
       <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
         <button className="flex items-center justify-center w-12 h-12 bg-white shadow-lg rounded-full text-[#C41E56] text-2xl">
@@ -75,12 +79,12 @@ function Slideshow() {
 
 function SocialIcon({ href, Icon }) {
   return (
-    <a
+    <Link
       href={href}
       className="flex items-center justify-center w-10 h-10 bg-black text-white rounded-full"
     >
       <Icon size={20} />
-    </a>
+    </Link>
   );
 };
 
@@ -101,7 +105,8 @@ const validationSchema = yup.object().shape({
 
 const FormComponent = () => {
   const [message, setMessage] = useState('');
-
+  const [isLoading, setLoading] = useState(false);
+  
   // Initialize React Hook Form with Yup resolver
   const {
     register,
@@ -115,6 +120,7 @@ const FormComponent = () => {
   // Submit handler
   const onSubmit = async (data) => {
     setMessage('Loading....!');
+    setLoading(true)
     fetch('https://sheetdb.io/api/v1/9ohsfcjei1vvj', {
       method: 'POST',
       headers: {
@@ -128,10 +134,14 @@ const FormComponent = () => {
       .then((response) => response.json())
       .then(() => {
         setMessage('You have been added to the waitlist');
+        setLoading(false)
         reset();
+
       })
       .catch(() => {
         setMessage('There was an error. Please try again.');
+      setLoading(false)
+
       });
   };
 
@@ -140,12 +150,12 @@ const FormComponent = () => {
       {/* Email Input */}
       <div className="flex flex-col w-full">
         <div className="flex items-center w-full bg-white rounded-md px-4 py-3 shadow-md">
-          <FaEnvelope className="text-[#B3A8A8] mr-3" size={20} />
+          <FaEnvelope className="text-[rgba(0,0,0,0.5)] mr-3" size={20} />
           <input
             type="email"
             placeholder="Email"
             {...register('email')}
-            className="w-full outline-none text-[#B3A8A8] text-lg"
+            className="w-full outline-none text-[rgba(0,0,0,0.5)] text-lg"
           />
         </div>
         {errors.email && <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>}
@@ -154,12 +164,13 @@ const FormComponent = () => {
       {/* Phone Input */}
       <div className="flex flex-col w-full">
         <div className="flex items-center w-full bg-white rounded-md px-4 py-3 shadow-md">
-          <FaPhoneAlt className="text-[#B3A8A8] mr-3" size={20} />
+          <FaPhoneAlt className="text-[rgba(0,0,0,0.5)] mr-3" size={20} />
           <input
             type="tel"
             placeholder="Phone No"
             {...register('phone')}
-            className="w-full outline-none text-[#B3A8A8] text-lg"
+            className="w-full outline-none text-[rgba(0,0,0,0.5)] text-lg"
+            maxLength={10}
           />
         </div>
         {errors.phone && <p className="text-red-500 text-sm mt-2">{errors.phone.message}</p>}
@@ -167,13 +178,17 @@ const FormComponent = () => {
 
       {/* Submit Button */}
       <button
-        className="text-[#C41E56] w-full bg-[#FFFFFF] text-lg font-semibold py-3 rounded-md shadow-md hover:bg-[#a71745] hover:text-white transition"
+        className="text-[#C41E56] w-full bg-[#FFFFFF] text-lg font-semibold py-3 rounded-md shadow-md hover:bg-[#a71745] hover:text-white transition relative"
         onClick={handleSubmit(onSubmit)}
       >
-        Join the Waitlist
+        {isLoading?<span className=' text-white'>Joining...</span>:<span className=' pl-2 h-min my-auto '>Join the Waitlist</span>}
+             {isLoading && <svg aria-hidden="true" class="  inline absolute right-5 bottom-3 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#f8739f] dark:fill-gray-300 " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>}
       </button>
 
-      <p className="text-sm text-[#B3A8A8] mt-2">
+      <p className="text-sm text-[#FFFFFF] mt-2">
         Join a waitlist of 1750+ members!
       </p>
 
@@ -188,12 +203,14 @@ const FormComponent = () => {
 
 const Footer = () => {
   return (
-    <div className="rounded-lg bg-[#C41E56] text-white justify-center flex p-4">
+    <Link  href="https://www.google.co.in/maps/dir//Broadway+Empire,+Nilamber+Circle,+Vasna+Bhayli+Main+Rd,+near+Akshar+Pavilion,+Saiyed+Vasna,+Vadodara,+Gujarat+391410/@22.301387,73.0587415,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x395fc97a52df2dff:0x8a31a8ec9fed0ebb!2m2!1d73.1411431!2d22.3014078?entry=ttu&g_ep=EgoyMDI0MTAxNS4wIKXMDSoASAFQAw%3D%3D"  className="rounded-lg bg-[#C41E56] text-white justify-center flex p-4">
+      <p className=" my-auto">
       <FaLocationDot size={20} />
-      <p className="font-semibold">
+      </p>
+      <p className="font-semibold ml-3 hover:underline">
         Broadway Empire, Nilamber Circle, Vasna Bhayli Main Rd, near Akshar Pavilion, Saiyed Vasna, Vadodara, Gujarat 391410
       </p>
-    </div>
+    </Link>
   );
 };
 
