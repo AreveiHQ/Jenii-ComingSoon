@@ -64,15 +64,15 @@ function Slideshow() {
         alt="Diamond Ring"
         className="w-30 h-30 mx-auto "
       />
-      <div className="h-10 w-[80%] md:w-[60%] lg:w-[50%] mx-auto bg-[radial-gradient(49.69%_46.99%_at_49.42%_42.82%,#AAAAAA_0%,#B6B6B6_8%,#D5D5D5_33%,#ECECEC_57%,#FAFAFA_80%,transparent_100%)]"></div>
+      <div className="h-10 w-[80%] md:w-[60%] lg:w-[50%] mx-auto bg-[radial-gradient(49.69%_46.99%_at_49.42%_42.82%,#AAAAAA_0%,#B6B6B6_8%,#e0e0e0_33%,#ECECEC_57%,transparent_80%,transparent_100%)]"></div>
      
       </div>
       {/* Right Arrow Button */}
-      <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
+      {/* <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
         <button className="flex items-center justify-center w-12 h-12 bg-white shadow-lg rounded-full text-[#C41E56] text-2xl">
           <FaAngleRight />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
