@@ -21,7 +21,7 @@ const Header = () => {
               </Link>
               {/* Visit Store Button */}
               <li>
-                <Link href='https://www.google.co.in/search?sca_esv=33073fab614d76a8&sxsrf=ADLYWIIMq3Vq9If5q0PF5G76Ey-vH0tCYw%3A1728886235066&kgmid=%2Fg%2F11ltsgqj64&q=Jenii%20(%20J.P%20Sterling%20Silver%20)&shndl=30&source=sh%2Fx%2Floc%2Fact%2Fm1%2F2&kgs=a3d3e64e119ef526'><button className="bg-[#C41E56] text-white px-4 py-1.5 sm:py-2 my-auto rounded-full font-medium hover:bg-[#a71745] transition flex ">
+                <Link href='https://www.google.co.in/maps/dir//Broadway+Empire,+Nilamber+Circle,+Vasna+Bhayli+Main+Rd,+near+Akshar+Pavilion,+Saiyed+Vasna,+Vadodara,+Gujarat+391410/@22.301387,73.0587415,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x395fc97a52df2dff:0x8a31a8ec9fed0ebb!2m2!1d73.1411431!2d22.3014078?entry=ttu&g_ep=EgoyMDI0MTAxNS4wIKXMDSoASAFQAw%3D%3D'><button className="bg-[#C41E56] text-white px-4 py-1.5 sm:py-2 my-auto rounded-full font-medium hover:bg-[#a71745] transition flex ">
                   <span className="mt-1 mr-2 hidden sm:block"><FaLocationDot size={20} /></span>
                   <p>Visit Store</p>
                 </button>
