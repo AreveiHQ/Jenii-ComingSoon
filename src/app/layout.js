@@ -13,13 +13,15 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Jenii Jwelleries",
-  description: "Jenii Jewelry Shop offers a curated selection of exquisite silver jewelry, blending timeless elegance with modern designs. Our collection features meticulously crafted pieces, including rings, necklaces, bracelets, and earrings, all made from high-quality silver to ensure both style and durability. We take pride in offering unique designs that cater to a variety of tastes, from classic and sophisticated to contemporary and bold. At Jenii Jewelry, we are dedicated to providing exceptional craftsmanship, personalized service, and a seamless shopping experience for every customer. Discover the perfect piece to elevate your style at Jenii Jewelry Shop.",
+  title: "Jenii - A JP Sterling Silver Brand | Premium Sterling Silver Jewellery",
+  description: "Jenii Jewelry Shop offers a curated selection of exquisite silver jewelry, blending timeless elegance with modern designs. Our collection features meticulously crafted pieces, including rings, necklaces, bracelets, and earrings, all made from high-quality silver to ensure both style and durability. ",
+  keywords: ["silver jewellery", "Jenii JP", "JP jewellers"," Silver Rings", "Silver Bracelets", "couple Rings", "jwellers for men"," jwellers for women" ,"silver branded jewelleries"]
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+    
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

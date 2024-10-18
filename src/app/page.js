@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
    <>
+
     <div className={` ${inter.className} bg-cover bg-center bg-no-repeat`} style={{ backgroundImage: "url('/bg.png')" }}>
       <Header/>
       <div className="mt-4">
