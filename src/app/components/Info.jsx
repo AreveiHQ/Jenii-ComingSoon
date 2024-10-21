@@ -152,10 +152,10 @@ const FormComponent = () => {
      <div className="flex flex-col items-center px-6  mx-auto text-center max-w-4xl ">
       {/* Coming Soon Main Text */}
       <h1 className=" text-4xl sm:text-5xl md:text-6xl text-[#C41E56] font-semibold ">We're Coming to You Online!</h1>
-      <p className="text-[#C41E56] text-lg  mt-2 ">
+      <p className="text-[#646262] text-lg  mt-2 ">
       Hey Vadodara, something special is on its way!
       </p>
-      <p className="text-[#C41E56]">Join our waitlist to be the first to know when our online store opens and enjoy exclusive early access to discounts and offers of up to 40%.</p>
+      <p className="text-[#646262]">Join our waitlist to be the first to know when our online store opens and enjoy exclusive early access to discounts and offers of up to 40%.</p>
     </div>
     <div className="flex flex-col items-center justify-center gap-4 w-full max-w-[500px] p-4 mx-auto">
       {/* Email Input */}
