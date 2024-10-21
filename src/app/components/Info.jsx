@@ -33,12 +33,13 @@ const Info = () => {
 function MidText() {
   
   return (
-    <div className="flex flex-col items-center mx-6 text-center">
+    <div className="flex flex-col items-center px-6  mx-auto text-center max-w-4xl">
       {/* Coming Soon Main Text */}
       <h1 className=" text-5xl sm:text-6xl md:text-7xl text-[#C41E56] font-semibold ">Coming Soon</h1>
       <p className="text-[#C41E56] text-lg  mt-2">
-        Discover the beauty of timeless craftsmanship with Jenii
+      Celebrate your life's unique moments with Jenii's Silver Sterling jewellery.
       </p>
+      <p className="text-[#C41E56]">Discover exquisite, timeless jewellery with beautifully crafted rings, necklaces, earrings, and bracelets, all made from the finest Sterling Silver.</p>
     </div>
   );
 };
@@ -67,6 +68,7 @@ function Slideshow() {
       <div className="h-10 w-[80%] md:w-[60%] lg:w-[50%] mx-auto bg-[radial-gradient(49.69%_46.99%_at_49.42%_42.82%,#AAAAAA_0%,#B6B6B6_8%,#e0e0e0_33%,#ECECEC_57%,transparent_80%,transparent_100%)]"></div>
      
       </div>
+     
       {/* Right Arrow Button */}
       {/* <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
         <button className="flex items-center justify-center w-12 h-12 bg-white shadow-lg rounded-full text-[#C41E56] text-2xl">
@@ -146,7 +148,16 @@ const FormComponent = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 w-[500px] p-4">
+    <div className=" flex flex-col w-full gap-y-5">
+     <div className="flex flex-col items-center px-6  mx-auto text-center max-w-4xl ">
+      {/* Coming Soon Main Text */}
+      <h1 className=" text-4xl sm:text-5xl md:text-6xl text-[#C41E56] font-semibold ">We're Coming to You Online!</h1>
+      <p className="text-[#C41E56] text-lg  mt-2 ">
+      Hey Vadodara, something special is on its way!
+      </p>
+      <p className="text-[#C41E56]">Join our waitlist to be the first to know when our online store opens and enjoy exclusive early access to discounts and offers of up to 40%.</p>
+    </div>
+    <div className="flex flex-col items-center justify-center gap-4 w-full max-w-[500px] p-4 mx-auto">
       {/* Email Input */}
       <div className="flex flex-col w-full">
         <div className="flex items-center w-full bg-white rounded-md px-4 py-3 shadow-md">
@@ -195,6 +206,8 @@ const FormComponent = () => {
       {/* Success/Error Message */}
       {message && <p className="mt-2 text-lg text-center">{message}</p>}
     </div>
+    </div>
+
   );
 };
 
