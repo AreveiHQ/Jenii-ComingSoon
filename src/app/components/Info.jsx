@@ -52,7 +52,7 @@ function Slideshow() {
       {/* Social Media Icons */}
       <div className="  static md:absolute left-1/3 md:left-6 top-0  md:top-1/2 transform -translate-y-1/2 flex flex-row md:flex-col gap-4">
         <SocialIcon href="https://m.facebook.com/jenii.jp.jewellery/" Icon={FaFacebook} />
-        <SocialIcon href={`https://wa.me/919824825564?text=${Message}`}Icon={FaWhatsapp} />
+        <SocialIcon href={`https://wa.me/919157071575?text=${Message}`}Icon={FaWhatsapp} />
         <SocialIcon href="https://www.instagram.com/jenii.jp.jewellery?igsh=eXZ1ajkwMTZyeDlt" Icon={FaInstagram} />
       </div>
 
