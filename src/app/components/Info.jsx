@@ -203,6 +203,15 @@ const FormComponent = () => {
         Join a waitlist of 1750+ members!
       </p>
 
+      <div className=" mx-auto flex flex-col gap-y-2 text-center justify-between text-[#C41E56] font-semibold">
+        <a href="/terms-and-conditions" className="hover:underline">
+          Terms and Conditions
+        </a>
+        <a href="/policies" className="hover:underline">
+          Privacy Policy
+        </a>
+      </div>
+
       {/* Success/Error Message */}
       {message && <p className="mt-2 text-lg text-center">{message}</p>}
     </div>
